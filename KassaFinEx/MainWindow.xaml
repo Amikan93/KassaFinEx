@@ -1,0 +1,76 @@
+﻿<Window x:Class="KassaFinEx.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KassaFinEx"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="LightGray">
+
+
+        <!--//для чека-->
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="800" Background="Blue">
+
+            <Label Content="ЧЕК #2 " FontSize="18" Foreground="White" FontWeight="Bold"  HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="90">
+            </Label>
+
+        </Border>
+        <!--//выпадающий список-->
+        <ComboBox Name="Cheks" Background="Blue" Foreground="Black" Height="24" VerticalAlignment="Top" Margin="430,10,350,0" >
+
+            <TextBlock>Чек 1</TextBlock>
+            <TextBlock>Чек 3</TextBlock>
+            <TextBlock>Чек 4</TextBlock>
+        </ComboBox>
+        <!--Список продуктов-->
+        <TextBox HorizontalAlignment="Left" Background="White" Text=" Наименование                                   Кол-во                             Цена                        Сумма" VerticalAlignment="Top" Width="500" Margin="0,40,0,0" Height="25" FontSize="12"/>
+
+        <!--цена карта наличка-->
+        <Button Grid.Column="3" Grid.Row="1" Background="Azure"  Content="Тут должна быть цена" HorizontalAlignment="Left" Height="90" Margin="500,40,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button Grid.Column="0" Grid.Row="1" Content="Карта" Background="Aqua" HorizontalAlignment="Left" Height="40" Margin="500,130,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button Grid.Column="3" Grid.Row="1" Content="Наличка" Background="Blue" HorizontalAlignment="Left" Height="40"  Margin="500,170,0, 0"  VerticalAlignment="Top" Width="300"/>
+        <!--серый прямоугольник для продлжения списка-->
+
+
+
+        <StackPanel HorizontalAlignment="Center" Height="35"  Margin="0,170,0,0" VerticalAlignment="Top" Width="800" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" >
+            <!--<TextBox  Content="Продажа по свободной цене"></TextBox>-->
+        </StackPanel>
+        <GroupBox Background="White" HorizontalAlignment="Center" Height="40" Header="                                           ПРОДАЖА ПО СВОБОДНОЙ ЦЕНЕ" FontSize="20" VerticalAlignment="Top" Width="800" Margin="0,210,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="561,260,0,0" TextWrapping="Wrap" Text="Комментарий к цене" VerticalAlignment="Top" Width="239" Height="49"/>
+
+
+        <Grid  Margin="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button Content="7" FontSize="20" Grid.Column="0" Grid.Row="2" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="8" FontSize="20" Grid.Column="1" Grid.Row="2" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="9" FontSize="20" Grid.Column="2" Grid.Row="2" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="4" FontSize="20" Grid.Column="0" Grid.Row="1" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="5" FontSize="20" Grid.Column="1" Grid.Row="1" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="6" FontSize="20" Grid.Column="2" Grid.Row="1" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="1" FontSize="20" Grid.Column="0" Grid.Row="0" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="2" FontSize="20" Grid.Column="1" Grid.Row="0" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="3" FontSize="20" Grid.Column="2" Grid.Row="0" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="." FontSize="20" Grid.Column="0" Grid.Row="3" Margin="2" Width="100" Height="40" Click="NumEvent"/>
+            <Button Content="0" FontSize="20" Grid.Column="1" Grid.Row="3" Margin="2" Width="100" Height="40" Background="Gray" Click="NumEvent"/>
+            <Button Content="Clear" FontSize="18" Grid.Column="2" Grid.Row="3" Margin="2" Width="100" Height="40" Click="clik_Clear"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="10,260,0,0" TextWrapping="Wrap" Text="ИТОГО" VerticalAlignment="Top" Width="216"/>
+        <TextBlock HorizontalAlignment="Left" Height="37" Margin="10,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"><Run Language="ru-ru" Text="Цена товара"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="10,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.471,-0.266"><Run Language="ru-ru" Text="Цена продажи"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="35" Margin="10,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"><Run Language="ru-ru" Text="Количество"/></TextBlock>
+
+    </Grid>
+</Window>
